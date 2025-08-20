@@ -20,5 +20,3 @@ w1_span = w1*[0.95 1 1.05];
 w2_span = w2*[0.95 1 1.05];
 magD1_w1 = squeeze(abs(freqresp(D1, w1_span)));
 magD1_w2 = squeeze(abs(freqresp(D1, w2_span)));
-fprintf('Notch |D1(jw1±5%%)| = [%.3f  %.3f  %.3f]\n', magD1_w1);
-fprintf('Notch |D1(jw2±5%%)| = [%.3f  %.3f  %.3f]\n', magD1_w2);
