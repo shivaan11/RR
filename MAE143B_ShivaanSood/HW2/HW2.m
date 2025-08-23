@@ -53,15 +53,15 @@ T0 = 35; T1 = 45; P = 1/0.5; g.T = 220;
 
 G_2 = RR_pade(d,2,2)*RR_tf(1,[1/a0 1]);
 
-Kc = 0.8; Ki = 55;
-D = Kc*(1+RR_tf(1,[Ki 0]));
+Kc = 0.7; ti = 60;
+D = Kc*(1+RR_tf(1,[ti 0]));
 
 figure(1), RR_step(T0+(T1-T0)*P*(G_2*D/(1+G_2*D)),g), axis([0 220 32 55]), grid on;
-title(sprintf('Creative (PI): T(s), Kc=%.2f, Ki=%.0f, Padé(2,2)',Kc, Ki));
+title(sprintf('Creative (PI): T(s), Kc=%.2f, Ki=%.0f, Padé(2,2)',Kc, ti));
 xlabel('Time (s)'); ylabel('Temperature y(t) (°C)');
 
 figure(2), RR_step(T0+(T1-T0)*P*(D/(1+G_2*D)),g), axis([0 220 40 60]), grid on;
-title(sprintf('Creative (PI): S_u(s), Kc=%.2f, Ki=%.0f, Padé(2,2)',Kc, Ki));
+title(sprintf('Creative (PI): S_u(s), Kc=%.2f, Ki=%.0f, Padé(2,2)',Kc, ti));
 xlabel('Time (s)'); ylabel('u(t) (°C)');
 
 G_16 = RR_pade(d,16,13)*RR_tf(1,[1/a0 1]);
